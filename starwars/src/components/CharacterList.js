@@ -5,7 +5,7 @@ const CharacterList = props =>{
     return(
         <div>
             {props.starwarsChars.map((char) =>{
-                return <Character character={char} />
+                return <Character key={char.created} character={char} />
             })}
         </div>
     )
@@ -13,3 +13,6 @@ const CharacterList = props =>{
 }
 
 export default CharacterList;
+
+// "2014-12-09T13:50:51.644000Z"
+//"2014-12-10T15:10:51.357000Z"
