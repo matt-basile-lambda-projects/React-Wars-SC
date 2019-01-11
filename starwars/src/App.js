@@ -35,8 +35,9 @@ class App extends Component {
   };
   handleNextPage = () => {
     console.log(this);
+    this.getCharacters(this.state.nextPage);
     this.setState({pageURL: this.state.nextPage});
-    this.getCharacters(this.state.pageURL);
+    
   }
   // nextCharacters = URL => {
   //   // feel free to research what this code is doing.
@@ -65,7 +66,7 @@ class App extends Component {
         starwarsChars={this.state.starwarsChars}
         starwarsPlanets={this.state.starwarsPlanets}/>
         <button>Previous</button>
-        <button onClick={this.handleNextPage}>Next</button>
+        <button className="next"onClick={this.handleNextPage}>Next</button>
       </div>
     );
   }
