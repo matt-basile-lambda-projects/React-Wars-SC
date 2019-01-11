@@ -68,6 +68,10 @@
     position: relative;
     display: none;
 }
+.btn-saber .plasma{
+    display: block;
+}
+
 /* .blade-shine{
     position: absolute;
     width: 95%;

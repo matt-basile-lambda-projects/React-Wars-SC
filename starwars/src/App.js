@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import CharacterList from './components/CharacterList'
+import LightSaber from './components/LightSaber'
+
 
 class App extends Component {
   constructor() {
@@ -74,6 +76,8 @@ class App extends Component {
         hideSaber = {this.hideSaber}
         starwarsChars={this.state.starwarsChars}
         starwarsPlanets={this.state.starwarsPlanets}/>
+        {/* <LightSaber className="btn-saber" onClick={this.handlePrevPage}/>
+        <LightSaber className="btn-saber" onClick={this.handleNextPage}/> */}
         <button className="next"onClick={this.handlePrevPage} >Previous</button>
         <button className="next" onClick={this.handleNextPage}>Next</button>
       </div>
