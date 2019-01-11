@@ -36,15 +36,22 @@ class App extends Component {
       });
   };
   handleNextPage = () => {
+    if(this.state.nextPage === null){
+      alert("Wow look at you Padawon! You've seen everybody. Hit Previous to revist our favorite characters!");
+    }
+    else {
     console.log(this);
     this.getCharacters(this.state.nextPage);
     this.setState({pageURL: this.state.nextPage});
-  }
+  }}
   handlePrevPage = () => {
+    if(this.state.prevPage === null){
+      alert('Sorry nothing to see that way!')
+    } else{
     console.log(this);
     this.getCharacters(this.state.prevPage);
     this.setState({pageURL: this.state.prevPage});
-  }
+  }}
   // nextCharacters = URL => {
   //   // feel free to research what this code is doing.
   //   // At a high level we are calling an API to fetch some starwars data from the open web.
