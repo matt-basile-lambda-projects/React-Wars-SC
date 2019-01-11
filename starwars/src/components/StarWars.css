@@ -41,13 +41,13 @@
 .handle{
     height: 15px;
     background: white;
-    width: 40px;
+    width: 100px;
     position: relative;
 }
 .switch{
     position: absolute;
     top: 5px;
-    left: 10px;
+    left: 28px;
     background: black;
     z-index: 1;
     width: 15px;
@@ -66,6 +66,7 @@
     background-color: red;
     border-radius: 0 5px 5px 0;
     position: relative;
+    display: none;
 }
 /* .blade-shine{
     position: absolute;

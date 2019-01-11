@@ -7,7 +7,7 @@ const CharacterList = props =>{
     return(
         <div className="char-list">
             {props.starwarsChars.map((char) =>{
-                return <Character key={char.created}  character={char} />
+                return <Character showSaber={props.showSaber} key={char.created}  character={char} />
             })}
         </div>
     )
