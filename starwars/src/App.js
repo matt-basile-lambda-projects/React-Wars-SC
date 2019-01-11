@@ -9,6 +9,7 @@ class App extends Component {
       starwarsChars: [],
       pageURL: 'https://swapi.co/api/people',
       nextPage: null,
+      prevPage: null,
     };
   }
 
@@ -28,6 +29,7 @@ class App extends Component {
         console.log(data);
         this.setState({ starwarsChars: data.results });
         this.setState({ nextPage: data.next});
+        this.setState({ prevPage: data.previous})
       })
       .catch(err => {
         throw new Error(err);
@@ -37,7 +39,11 @@ class App extends Component {
     console.log(this);
     this.getCharacters(this.state.nextPage);
     this.setState({pageURL: this.state.nextPage});
-    
+  }
+  handlePrevPage = () => {
+    console.log(this);
+    this.getCharacters(this.state.prevPage);
+    this.setState({pageURL: this.state.prevPage});
   }
   // nextCharacters = URL => {
   //   // feel free to research what this code is doing.
@@ -65,8 +71,8 @@ class App extends Component {
         <CharacterList 
         starwarsChars={this.state.starwarsChars}
         starwarsPlanets={this.state.starwarsPlanets}/>
-        <button>Previous</button>
-        <button className="next"onClick={this.handleNextPage}>Next</button>
+        <button className="next"onClick={this.handlePrevPage} >Previous</button>
+        <button className="next" onClick={this.handleNextPage}>Next</button>
       </div>
     );
   }
