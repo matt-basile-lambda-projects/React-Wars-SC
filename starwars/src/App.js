@@ -54,9 +54,15 @@ class App extends Component {
   }}
 
   showSaber = ev =>{
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
     ev.target.lastElementChild.lastElementChild.style.display="block";
-    ev.target.lastElementChild.lastElementChild.style.backgroundColor= "rgb(135, 220, 90)";
-    console.log(ev.target.indexOf());
+    ev.target.lastElementChild.lastElementChild.style.backgroundColor= getRandomInt(10)%2 === 0 ? "rgb(135, 220, 90)" : "rgb(229, 17, 21)";
+    console.log();
+   }
+   hideSaber = ev =>{
+    ev.target.lastElementChild.lastElementChild.style.display="none";
    }
 
   render() {
@@ -65,6 +71,7 @@ class App extends Component {
         <h1 className="Header">React Wars</h1>
         <CharacterList 
         showSaber = {this.showSaber}
+        hideSaber = {this.hideSaber}
         starwarsChars={this.state.starwarsChars}
         starwarsPlanets={this.state.starwarsPlanets}/>
         <button className="next"onClick={this.handlePrevPage} >Previous</button>
